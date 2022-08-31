@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Movie Search</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/navigation.style.css" />
+        <link rel="stylesheet" href="../css/search.style.css" />
+    </head>
+    
+    <body>
+        <script src="../js/app.js"></script>
+
+        <!--
+        <header>
+            <h2>Movie Search Tool</h2>
+        </header>
+        -->
+
+        <div class="navbar">
+            <a href="../../index.html"><i class="fa-home"></i> Home</a>
+            <a class="active" href="./search.html"><i class="fa-search"></i> Search</a>
+            <a href="./about.html"><i class="fa-contact"></i> Contact</a>
+            <a href="./about.html"><i class="fa-about"></i> About</a>
+            <div class="search-container">
+                <input id="SearchField" type="text" placeholder="Search..">
+                <button id="SearchButton" type="Search" onclick="searchMovie()">Submit</button>
+            </div>
+        </div>
+
+        <section class="main-page">
+            <p class="no-results" id="noResults">No movie has been searched!</p>
+            <div class="gallery-grid"></div>
+            <div class="gallery-nav">
+                <a href="#" class="previous round" onclick="decreasePage()">&#8249;</a>
+                <a href="#" class="next round" onclick="increasePage()">&#8250;</a>
+            </div>
+            <div class="gallery-page">
+                <p id="galleryPage">Page 0 of 0</p>
+            </div>
+        </section>
+
+    </body>
+</html>
