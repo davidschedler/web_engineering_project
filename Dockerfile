@@ -5,7 +5,7 @@ WORKDIR "/app"
 COPY . .
 
 RUN npm install
-RUN npm ci
+RUN npm ci --no-optional
 RUN npm run build
 RUN npm prune --production
 
