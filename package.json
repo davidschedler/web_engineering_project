@@ -3,6 +3,7 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
+    "start:prod": "parcel",
     "build": "parcel build"
   },
   "devDependencies": {
