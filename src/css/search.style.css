@@ -7,6 +7,10 @@
     margin: 0;
     padding: 0;
   }
+
+  body{
+    background: #EEEEEE;
+  }
   
   /* The Picture Frame */
   .gallery-frame {
@@ -82,4 +86,12 @@ body {
 
 p {
   color: #000000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
 }
