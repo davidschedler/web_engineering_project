@@ -1,6 +1,25 @@
 var curentPage = 1;
 var totalPages = 0;
 var currentSearchTerm = "";
+var favoriteMovies = [];
+
+
+class Movie {
+    constructor(title, poster) {
+        this.title = title;
+        this.poster = poster;
+    }
+}
+
+function addFavorite(movie) {
+    favoriteMovies.push(movie);
+    console.log(favoriteMovies);
+}
+
+function removeFavorite(movie) {
+    favoriteMovies.splice(favoriteMovies.indexOf(movie), 1);
+    console.log(favoriteMovies);
+}
 
 function searchMovie() {
     var searchMovie = document.getElementById("SearchField").value;
@@ -33,8 +52,12 @@ function searchMovie() {
                 let galleryItemTitle = document.createElement("figcaption");
                 galleryItemTitle.textContent = movie.Title;
 
+                let galleryItemFavorite = document.createElement("button");
+                galleryItemFavorite.textContent = "Add to favorites";
+
                 galleryItem.appendChild(galleryItemImg);
                 galleryItem.appendChild(galleryItemTitle);
+                galleryItem.appendChild(galleryItemFavorite);
 
                 let galleryFrame = document.getElementsByClassName("gallery-grid")[count].appendChild(galleryItem);
                 count++;

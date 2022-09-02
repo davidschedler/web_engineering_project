@@ -11,6 +11,34 @@
   body{
     background: #EEEEEE;
   }
+
+  button {
+    border: none;
+    color: white;
+    background-color: #04AA6D;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+
+  button:hover {
+    border: none;
+    color: white;
+    background-color: #47e4aa;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
   
   /* The Picture Frame */
   .gallery-frame {
