@@ -3,8 +3,8 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
-    "start:prod": "parcel",
-    "build": "parcel build"
+    "build:prod": "parcel build",
+    "build:dev": "parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
