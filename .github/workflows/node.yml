@@ -1,25 +1,43 @@
-name: Node.js CI
+name: Deploy to GitHub Pages
 
-on: [push, pull_request]
+on:
+  push: 
+    branches: [ release ] # is triggered if push event in release branch occurs
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # run ubuntu
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm install
-    
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+    - uses: actions/checkout@v3 # checkout your repo - this is an official action provided by GitHub
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+    - name: Build the application
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm i # install dependencies; eg node_modules
+    - run: npm install eslint -g -D
+    - run: eslint --init
+    - run: npm run build # run build
+    - name: Init new repo in dist folder and commit generated files
+      run: |
+        cd dist
+        git init
+        git add -A
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m 'deploy'
+    - name: Force push to destination branch
+      uses: ad-m/github-push-action@master
+      with:
+        # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # Destination branch to push changes
+        branch: gh-pages
+        # Use force push to fully overwrite the destination branch
+        force: true
+        # We have to push from the folder where files were generated.
+        # Same were the new repo was initialized in the previous step
+        directory: dist
