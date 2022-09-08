@@ -32,8 +32,8 @@ jobs:
     - name: Force push to destination branch
       uses: ad-m/github-push-action@master
       with:
-        # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # Token for the repo. Can be passed in using $\{{ secrets.MY_GITHUB_TOKEN }}
+        github_token: ${{ secrets.MY_GITHUB_TOKEN }}
         # Destination branch to push changes
         branch: gh-pages
         # Use force push to fully overwrite the destination branch
