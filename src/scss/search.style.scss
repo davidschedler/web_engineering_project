@@ -1,0 +1,125 @@
+/* grid gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    background: #EEEEEE;
+  }
+
+  button {
+    border: none;
+    color: white;
+    background-color: #04AA6D;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+
+  button:hover {
+    border: none;
+    color: white;
+    background-color: #47e4aa;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+  
+  /* The Picture Frame */
+  .gallery-frame {
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #333;
+    color: #d9d9d9;
+  }
+  
+  /* The Images */
+  .gallery-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.25s ease-in-out;
+  }
+  
+  .gallery-img:hover {
+    opacity: .7;
+  }
+
+/* Style the gallery nav */
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+ 
+  /* 
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  */
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .round {
+    border-radius: 50%;
+  }
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-page {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+p {
+  color: #000000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
