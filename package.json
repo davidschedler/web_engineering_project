@@ -3,6 +3,7 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
+    "build": "parcel build",
     "build:prod": "parcel build",
     "build:dev": "parcel build"
   },

@@ -46,6 +46,15 @@ function searchMovie() {
 
                 let galleryItemFavorite = document.createElement("button");
                 galleryItemFavorite.textContent = "Add to favorites";
+                galleryItemFavorite.onclick = function() {
+                    let myButton = <HTMLInputElement>document.getElementById("favButton");
+                    let number = (<HTMLInputElement>document.getElementById("favButton"))?.innerText;
+                    let convertedNumber = parseInt(number);
+                    convertedNumber++;
+                    document.getElementById("favButton").innerText = convertedNumber.toString();
+                    console.log(myButton)
+                    console.log(number)
+                }
 
                 galleryItem.appendChild(galleryItemImg);
                 galleryItem.appendChild(galleryItemTitle);

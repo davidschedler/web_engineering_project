@@ -22,10 +22,13 @@
         <div class="navbar">
             <a href="../../index.html"><i class="fa-home"></i> Home</a>
             <a class="active" href="./search.html"><i class="fa-search"></i> Search</a>
-            <a href="./favoriten.html"><i class="fa-favoriten"></i> Favoriten</a>
+             <!--<a href="./favoriten.html"><i class="fa-favoriten"></i> Favoriten</a>-->
             <a href="./contact.html"><i class="fa-contact"></i> Contact</a>
             <a href="./about.html"><i class="fa-about"></i> About</a>
             <div class="search-container">
+                <button id="favButton" type="button" class="btn btn-primary">
+                    <span class="badge bg-secondary">0</span>
+                 </button>
                 <input id="SearchField" type="text" placeholder="Search..">
                 <button id="SearchButton" type="Search" onclick="searchMovie()">Submit</button>
             </div>
